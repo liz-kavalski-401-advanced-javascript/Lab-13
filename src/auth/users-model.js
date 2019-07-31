@@ -46,7 +46,7 @@ users.methods.generateToken = function() {
     capabilities: (this.acl && this.acl.capabilities) || [],
   };
   
-  return jwt.sign(token, process.env.SECRET)|| 'changeit';
+  return jwt.sign(token, process.env.SECRET, {expiresIn:'15m'});
 };
 
 module.exports = mongoose.model('users', users);
