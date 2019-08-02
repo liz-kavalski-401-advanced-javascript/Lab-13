@@ -2,12 +2,8 @@
 ### Author: Adrienne Easton and Liz Kavalski
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-
-#### Documentation
-
+[![Build Status](https://travis-ci.com/liz-kavalski-401-advanced-javascript/lab-01.svg?branch=master)](https://travis-ci.com/liz-kavalski-401-advanced-javascript/lab-01)
+* [submission PR](https://github.com/liz-kavalski-401-advanced-javascript/lab-13/pull/4)
 
 ### Modules
 #### `middleware.js`
