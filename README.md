@@ -1,9 +1,8 @@
 # Lab-13 Bearer Authorization
 ### Author: Adrienne Easton and Liz Kavalski
-
+[![Build Status](https://travis-ci.com/liz-kavalski-401-advanced-javascript/lab-13.svg?branch=master)](https://travis-ci.com/liz-kavalski-401-advanced-javascript/lab-13)
 ### Links and Resources
 * [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
 * [back-end](http://xyz.com) (when applicable)
 
 #### Documentation
