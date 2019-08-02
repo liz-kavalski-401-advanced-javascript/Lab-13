@@ -5,9 +5,6 @@
 * [submission PR](http://xyz.com)
 * [back-end](http://xyz.com) (when applicable)
 
-#### Documentation
-
-
 ### Modules
 #### `middleware.js`
 Runs authencation 
