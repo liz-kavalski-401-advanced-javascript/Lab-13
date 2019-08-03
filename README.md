@@ -2,19 +2,24 @@
 ### Author: Adrienne Easton and Liz Kavalski
 [![Build Status](https://travis-ci.com/liz-kavalski-401-advanced-javascript/lab-13.svg?branch=master)](https://travis-ci.com/liz-kavalski-401-advanced-javascript/lab-13)
 ### Links and Resources
-* [submission PR](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
+* [Submission PR for Lab 13-Bearer Auth](https://github.com/liz-kavalski-401-advanced-javascript/lab-13/pull/4)
+* [Submission PR for Lab 14-ACL](https://github.com/liz-kavalski-401-advanced-javascript/lab-13/pull/5)
 
 ### Modules
 #### `middleware.js`
 Runs authencation 
 #### `router.js`
 Paths to `/signup` and to `/signin`
+#### `play.js
+Has different path can let users 'read', 'create','update', and/or 'delete based on the user role. 
 #### `users-models.js`
-Form the schema, which is used to match user name,and password if already in the database, of not create one. It also generate and authenticate tokens
+Form the schema, which is used to match user name,and password if already in the database, of not create one. It also generate and authenticate tokens.
+#### `roles-models.js
+Contain the schema for the roles.
 #### `404.js`
 If their an error on the finding the paths
 #### `500.js`
+If their an error on the server side.
 
 
 ### Setup
@@ -36,9 +41,20 @@ If their an error on the finding the paths
 * Sign-in: `http post :3000/signin -a USERNAME:PASSWORD`
   * The username and password should be the same as the one to picked to sign-up.
   * Returns a JWT token.
+* Sign-in with a role `echo '{"username":"Nelly","password":"word","role":"admin"}' | http post :3000/signup`
+   * to assign a role with capabilities `echo '{"role":"admin", "capabilities":["read","create","update","delete"]}'| http post :3000/roles`
 * Sign-in with token: `http post :3000/signin "authorization: bearer TOKENHERE"`
   * In the TOKENHERE it should be the token that was return in the 'sign-in'.
   * Return the token or error if the the token has expires.
+  ##### Each of these paths you _will_ need to sign-in and get a new token for each path and use the new token 
+* ('/public-stuff') should be visible by anyone
+* ('/hidden-stuff') should require only a valid login
+* ('/something-to-read') should require the 'read' capability
+* ('/create-a-thing) should require the 'create' capability
+* ('/update) should require the 'update' capability
+* ('/jp) should require the 'update' capability
+* ('/bye-bye) should require the 'delete' capability
+* ('/everything') should require the 'superuser' capability
   
 #### Tests
 * `npm test`
