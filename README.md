@@ -14,7 +14,7 @@ Paths to `/signup` and to `/signin`
 Has different path can let users 'read', 'create','update', and/or 'delete based on the user role. 
 #### `users-models.js`
 Form the schema, which is used to match user name,and password if already in the database, of not create one. It also generate and authenticate tokens.
-#### `roles-models.js
+#### `roles-models.js`
 Contain the schema for the roles.
 #### `404.js`
 If their an error on the finding the paths
@@ -42,7 +42,10 @@ If their an error on the server side.
   * The username and password should be the same as the one to picked to sign-up.
   * Returns a JWT token.
 * Sign-in with a role `echo '{"username":"Nelly","password":"word","role":"admin"}' | http post :3000/signup`
-   * to assign a role with capabilities `echo '{"role":"admin", "capabilities":["read","create","update","delete"]}'| http post :3000/roles`
+   * to assign a role with capabilities: `echo '{"role":"admin", "capabilities":["read","create","update","delete"]}'| http post :3000/roles`
+     * `admin` has the capabitlites to 'read','create', 'update' and 'delete'
+     * `editor` has the capabitlites to 'read','create, and 'update'
+     * `user` has the capabitlity to 'read'.
 * Sign-in with token: `http post :3000/signin "authorization: bearer TOKENHERE"`
   * In the TOKENHERE it should be the token that was return in the 'sign-in'.
   * Return the token or error if the the token has expires.
