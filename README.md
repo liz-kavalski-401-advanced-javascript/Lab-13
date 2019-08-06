@@ -4,7 +4,7 @@
 ### Links and Resources
 * [Submission PR for Lab 13-Bearer Auth](https://github.com/liz-kavalski-401-advanced-javascript/lab-13/pull/4)
 * [Submission PR for Lab 14-ACL](https://github.com/liz-kavalski-401-advanced-javascript/lab-13/pull/5)
-
+* [Heroku](https://ek-ae-lab-13-bearer.herokuapp.com/)
 ### Modules
 #### `middleware.js`
 Runs authencation 
@@ -41,7 +41,7 @@ If their an error on the server side.
 * Sign-in: `http post :3000/signin -a USERNAME:PASSWORD`
   * The username and password should be the same as the one to picked to sign-up.
   * Returns a JWT token.
-* Sign-in with a role `echo '{"username":"Nelly","password":"word","role":"admin"}' | http post :3000/signup`
+* Sign-in with a role `echo '{"username":"USERNAME","password":"word","role":"admin"}' | http post :3000/signup`
    * to assign a role with capabilities: `echo '{"role":"admin", "capabilities":["read","create","update","delete"]}'| http post :3000/roles`
      * `admin` has the capabitlites to 'read','create', 'update' and 'delete'
      * `editor` has the capabitlites to 'read','create, and 'update'
@@ -50,14 +50,15 @@ If their an error on the server side.
   * In the TOKENHERE it should be the token that was return in the 'sign-in'.
   * Return the token or error if the the token has expires.
   ##### Each of these paths you _will_ need to sign-in and get a new token for each path and use the new token 
-* ('/public-stuff') should be visible by anyone
-* ('/hidden-stuff') should require only a valid login
-* ('/something-to-read') should require the 'read' capability
-* ('/create-a-thing) should require the 'create' capability
-* ('/update) should require the 'update' capability
-* ('/jp) should require the 'update' capability
-* ('/bye-bye) should require the 'delete' capability
-* ('/everything') should require the 'superuser' capability
+    * do `http post :3000/signin -a USERNAME:PASSWORD` to get a new token
+* get('/public-stuff') should be visible by anyone
+* get('/hidden-stuff') should require only a valid login
+* post('/something-to-read') should require the 'read' capability
+* put('/create-a-thing) should require the 'create' capability
+* put('/update) should require the 'update' capability
+* patch('/jp) should require the 'update' capability
+* delete('/bye-bye) should require the 'delete' capability
+* get('/everything') should require the 'superuser' capability
   
 #### Tests
 * `npm test`
