@@ -65,4 +65,4 @@ If their an error on the server side.
 * There need to be a test for signing-in with a token and signing-in with a expire token. Otherwise the testes are passing.
 
 #### UML
-[!UML lab 13](https://codefellows.slack.com/files/UF4LZ3T8T/FM353USHK/lab_13_1_.jpg)
+![UML lab 13](https://codefellows.slack.com/files/UF4LZ3T8T/FM353USHK/lab_13_1_.jpg)

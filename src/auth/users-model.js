@@ -56,9 +56,8 @@ users.statics.authenticateBasic = function(auth) {
     .then( user => user && user.comparePassword(auth.password) )
     .catch(error => {throw error;});
 };
-
+//it looking at line 24-31 at the acls and looking if the capability is their
 users.methods.can = function(capability){
-  console.log('the capability user can is...',this.acl.capabilities);
   return this.acl.capabilities.includes(capability);
 }
 
